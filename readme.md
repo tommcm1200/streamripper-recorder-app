@@ -45,12 +45,14 @@ docker run -it --entrypoint='bash' streamripper
 
 Set environment variables in task for testing:
 
-`set -x AWS_REGION="ap-southeast-2"
-QUEUE_URL="https://sqs.ap-southeast-2.amazonaws.com/447119549480/StreamripperQueue"
-RUN_CMD="streamripper $URL -l $DURATION -a $output_filename -o always"
-VERBOSE="0"
-TIMEOUT="10"
-COUNT="5"
-LOOP=""
+`export AWS_REGION="ap-southeast-2"
+export QUEUE_URL="https://sqs.ap-southeast-2.amazonaws.com/447119549480/StreamripperQueue"
+export RUN_CMD="streamripper $URL -l $DURATION -a $output_filename -o always"
+export VERBOSE="0"
+export TIMEOUT="10"
+export COUNT="5"
+export LOOP=""
 `
 
+Force refresh of ECS tasks once build job complete
+`aws ecs update-service --cluster Personal --service streamripper --force-new-deployment`
