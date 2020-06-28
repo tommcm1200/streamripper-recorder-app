@@ -78,6 +78,9 @@ while (true); do
         #Copy Episode to S3
         aws s3 cp $output_fullpath s3://$bucket/$RADIOSTATION/$SHOWNAME/$output_filename --storage-class STANDARD_IA
         
+        # Exit after recording episode - start fresh next time.
+        exit 1
+
     fi
     if [[ $LOOP != "" ]]; then
         let LOOP--

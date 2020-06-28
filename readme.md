@@ -30,13 +30,27 @@ ffmpeg -y \
  -t 15 \
  out.mp4
 
- docker run -it --entrypoint='bash' streamripper
+## Testing
+
+Build image
+`
+docker build -t streamripper:latest .
+`
+
+Interactive task:
+`
+docker run -it --entrypoint='bash' streamripper
+`
 
 
-set -x AWS_REGION="ap-southeast-2"
+Set environment variables in task for testing:
+
+`set -x AWS_REGION="ap-southeast-2"
 QUEUE_URL="https://sqs.ap-southeast-2.amazonaws.com/447119549480/StreamripperQueue"
 RUN_CMD="streamripper $URL -l $DURATION -a $output_filename -o always"
 VERBOSE="0"
 TIMEOUT="10"
-COUNT=""
+COUNT="5"
 LOOP=""
+`
+
