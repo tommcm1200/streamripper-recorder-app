@@ -69,9 +69,15 @@ while (true); do
         # kill $WGETPID
 
 #       v3
+        # ffmpeg -y \
+        #     -i $URL \
+        #     -c copy \
+        #     -t $DURATION \
+        #     $output_fullpath
+
         ffmpeg -y \
             -i $URL \
-            -c copy \
+            -c:a libmp3lame \
             -t $DURATION \
             $output_fullpath
 
