@@ -45,8 +45,8 @@ while (true); do
         DURATION=$(echo "$BODY" | jq -r '.duration')        
         
         date=`TZ=Australia/Melbourne date +"%Y-%m-%d_%a_%H%M"`
-        output_filename="$RADIOSTATION-$SHOWNAME-${date}.mp4"
-        # output_filename="$RADIOSTATION-$SHOWNAME-${date}.mp3"
+        # output_filename="$RADIOSTATION-$SHOWNAME-${date}.mp4"
+        output_filename="$RADIOSTATION-$SHOWNAME-${date}.mp3"
         output_fullpath=$output_dir"/"$output_filename
         echo "INFO output_fullpath: $output_fullpath"
 
