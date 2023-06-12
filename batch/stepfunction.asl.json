@@ -1,8 +1,8 @@
 {
     "Comment": "A description of my state machine",
-    "StartAt": "Batch SubmitJob",
+    "StartAt": "SubmitStreamripperJob",
     "States": {
-      "Batch SubmitJob": {
+      "SubmitStreamripperJob": {
         "Type": "Task",
         "Resource": "arn:aws:states:::batch:submitJob.sync",
         "Parameters": {
