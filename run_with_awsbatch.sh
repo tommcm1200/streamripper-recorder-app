@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
+date -u
+echo ------------------------
+echo "Args: $@"
+echo ------------------------
+env
+echo ------------------------
 
-# OUTPUT_DIR="/tmp"
-# OUTPUT_BUCKET="tommcm-streamripper"
-# URL=
-# SHOWNAME=
-# RADIOSTATION=
-# DURATION=
+SHOWNAME=$2
+RADIOSTATION=$3
+DURATION=$4
+URL=$5
 
 echo ------------------------
 echo SHOWNAME: $SHOWNAME
@@ -29,9 +33,9 @@ ffmpeg -y \
     $output_fullpath
 
 #Copy Episode to S3
-echo COPYING $output_fullpath TO S3
+echo COPYING $output_fullpath TO S3 
 aws s3 cp $output_fullpath s3://$OUTPUT_BUCKET/$RADIOSTATION/$SHOWNAME/$output_filename --storage-class STANDARD_IA
         
 # Exit after recording episode - start fresh next time.
-exit 1
+# exit 1
 

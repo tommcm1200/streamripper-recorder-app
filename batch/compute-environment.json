@@ -1,0 +1,29 @@
+{
+  "computeEnvironmentName": "streamripper",
+  "computeEnvironmentArn": "arn:aws:batch:ap-southeast-2:447119549480:compute-environment/streamripper",
+  "ecsClusterArn": "arn:aws:ecs:ap-southeast-2:447119549480:cluster/AWSBatch-streamripper-28b591fa-3f1a-30c9-aa23-eb43baa899f5",
+  "tags": {
+    "Name": "Streamripper"
+  },
+  "type": "MANAGED",
+  "state": "ENABLED",
+  "status": "VALID",
+  "statusReason": "ComputeEnvironment Healthy",
+  "computeResources": {
+    "type": "FARGATE_SPOT",
+    "maxvCpus": 10,
+    "subnets": [
+      "subnet-b74bbec1",
+      "subnet-b842b4e1",
+      "subnet-cac60fae"
+    ],
+    "securityGroupIds": [
+      "sg-af4700cb"
+    ],
+    "tags": {},
+    "ec2Configuration": []
+  },
+  "serviceRole": "arn:aws:iam::447119549480:role/aws-service-role/batch.amazonaws.com/AWSServiceRoleForBatch",
+  "containerOrchestrationType": "ECS",
+  "uuid": "bc77b19f-3a8b-396b-8ea2-03b217e780fa"
+}

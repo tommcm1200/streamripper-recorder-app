@@ -1,0 +1,22 @@
+{
+    "Comment": "A description of my state machine",
+    "StartAt": "Batch SubmitJob",
+    "States": {
+      "Batch SubmitJob": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::batch:submitJob.sync",
+        "Parameters": {
+          "JobQueue": "arn:aws:batch:ap-southeast-2:447119549480:job-queue/streamripper",
+          "Parameters": {
+            "show_name.$": "$.show_name", 
+            "radio_station.$": "$.radio_station",
+            "duration.$": "$.duration",
+            "url.$": "$.url"
+          },
+          "JobDefinition": "arn:aws:batch:ap-southeast-2:447119549480:job-definition/streamripper:5",
+          "JobName.$": "$.show_name"
+        },
+        "End": true
+      }
+    }
+  }
