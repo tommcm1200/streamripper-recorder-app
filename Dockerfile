@@ -1,10 +1,16 @@
-FROM jrottenberg/ffmpeg as ffmpeg
+FROM jrottenberg/ffmpeg:centos as ffmpeg
 
-RUN apt-get update \
-    && apt-get -y install python python-pip jq wget curl unzip\
+RUN yum -y upgrade \
+    && yum -y install curl unzip\
     && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"\
     && unzip awscliv2.zip\
     && ./aws/install
+
+# RUN apt-get update \
+#     && apt-get -y install python python-pip jq wget curl unzip\
+#     && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"\
+#     && unzip awscliv2.zip\
+#     && ./aws/install
 
 # RUN useradd -m -d /home/streamripper streamripper
 # USER streamripper
