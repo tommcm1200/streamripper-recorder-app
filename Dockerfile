@@ -14,13 +14,3 @@ RUN DEBIAN_FRONTEND=noninteractive \
 ADD run_with_awsbatch.sh /run_with_awsbatch.sh
 ENTRYPOINT ["/run_with_awsbatch.sh"]
 # VOLUME /home/streamripper
-
-
-
-# RUN useradd -m -d /home/streamripper streamripper
-# USER streamripper
-# WORKDIR /home/streamripper
-
-ADD run_with_awsbatch.sh /run_with_awsbatch.sh
-ENTRYPOINT ["/run_with_awsbatch.sh"]
-# VOLUME /home/streamripper
