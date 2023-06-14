@@ -1,0 +1,26 @@
+{
+    "containerOverrides": {
+        "environment": [{
+            "name": "SHOWNAME",
+            "value": "TEST"
+        }, {
+            "name": "RADIOSTATION",
+            "value": "TESTSTATION"
+        }, {
+            "name": "DURATION",
+            "value": "10"
+        },
+        {
+            "name": "URL",
+            "value": "https://realtime.rrr.org.au/p1h"
+        },
+        {
+            "name": "OUTPUT_BUCKET",
+            "value": "tommcm-streamripper"
+        },
+        {
+            "name": "OUTPUT_DIR",
+            "value": "/tmp"
+        }]
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "jobName": "my-job",
+    "jobQueue": "streamripper",
+    "jobDefinition": "streamripper:5",
+    "parameters": {
+        "show_name": "TEST_SF", 
+        "radio_station": "TESTSTATION",
+        "duration": "20",
+        "url": "https://realtime.rrr.org.au/p1h"
+    }
+}

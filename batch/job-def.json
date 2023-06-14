@@ -1,0 +1,61 @@
+{
+  "jobDefinitionName": "streamripper",
+  "jobDefinitionArn": "arn:aws:batch:ap-southeast-2:447119549480:job-definition/streamripper:5",
+  "revision": 5,
+  "status": "ACTIVE",
+  "type": "container",
+  "parameters": {},
+  "containerProperties": {
+    "image": "447119549480.dkr.ecr.ap-southeast-2.amazonaws.com/streamripper-batch:latest",
+    "command": [
+      "/run_with_awsbatch.sh",
+      "Ref::show_name",
+      "Ref::radio_station",
+      "Ref::duration",
+      "Ref::url"
+    ],
+    "jobRoleArn": "arn:aws:iam::447119549480:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::447119549480:role/ecsTaskExecutionRole",
+    "volumes": [],
+    "environment": [
+      {
+        "name": "OUTPUT_DIR",
+        "value": "/tmp"
+      },
+      {
+        "name": "OUTPUT_BUCKET",
+        "value": "tommcm-streamripper"
+      }
+    ],
+    "mountPoints": [],
+    "ulimits": [],
+    "resourceRequirements": [
+      {
+        "value": "0.25",
+        "type": "VCPU"
+      },
+      {
+        "value": "1024",
+        "type": "MEMORY"
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {},
+      "secretOptions": []
+    },
+    "secrets": [],
+    "networkConfiguration": {
+      "assignPublicIp": "ENABLED",
+      "interfaceConfigurations": []
+    },
+    "fargatePlatformConfiguration": {
+      "platformVersion": "LATEST"
+    }
+  },
+  "tags": {},
+  "platformCapabilities": [
+    "FARGATE"
+  ],
+  "containerOrchestrationType": "ECS"
+}

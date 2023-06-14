@@ -1,0 +1,6 @@
+SHOWNAME=TEST
+RADIOSTATION=TESTSTATION
+DURATION=10
+URL=https://realtime.rrr.org.au/p1h
+OUTPUT_BUCKET=tommcm-streamripper
+OUTPUT_DIR=/tmp
