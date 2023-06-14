@@ -1,5 +1,4 @@
 FROM jrottenberg/ffmpeg as ffmpeg
-FROM jrottenberg/ffmpeg as ffmpeg
 
 RUN DEBIAN_FRONTEND=noninteractive \
     && apt-get update \
