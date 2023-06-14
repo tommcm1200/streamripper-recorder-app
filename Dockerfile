@@ -1,6 +1,6 @@
 FROM jrottenberg/ffmpeg as ffmpeg
 
-RUN ENV DEBIAN_FRONTEND=nonintercative \
+RUN DEBIAN_FRONTEND=noninteractive \
     && apt-get update \
     && apt-get -y install python python-pip jq wget curl unzip\
     && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"\
