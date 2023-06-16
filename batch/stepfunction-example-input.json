@@ -1,6 +1,6 @@
 {
     "show_name": "TEST_SF",
     "radio_station": "TESTSTATION",
-    "duration": "7200",
+    "duration": "60",
     "url": "https://realtime.rrr.org.au/p1h"
   }

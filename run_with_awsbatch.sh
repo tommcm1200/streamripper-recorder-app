@@ -34,7 +34,7 @@ ffmpeg -y \
 
 #Copy Episode to S3
 echo COPYING $output_fullpath TO S3 
-aws s3 cp $output_fullpath s3://$OUTPUT_BUCKET/$RADIOSTATION/$SHOWNAME/$output_filename --storage-class STANDARD_IA
+aws s3 cp $output_fullpath s3://$OUTPUT_BUCKET/shows/$RADIOSTATION/$SHOWNAME/$output_filename --storage-class GLACIER_IR
         
 # Exit after recording episode - start fresh next time.
 # exit 1
